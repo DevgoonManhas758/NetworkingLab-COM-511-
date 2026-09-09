@@ -1,19 +1,26 @@
+
+
 def caesar_cipher(text, shift):
     result = ""
     for char in text:
         if char.isalpha():
             offset = ord('A') if char.isupper() else ord('a')
-            shift= chr((ord(char) - offset + shift) % 26 + offset)
-            result += shift
+            shifted_char = chr((ord(char) - offset + shift) % 26 + offset)
+            result += shifted_char
         else:
             result += char
     return result
-text = input("Enter your message: ")
+
+
+text = input("Enter your message for Caesar Cipher: ")
 shift = int(input("Enter shift value: "))
+
 encrypted = caesar_cipher(text, shift)
 print("Encrypted message:", encrypted)
+
 decrypted = caesar_cipher(encrypted, -shift)
 print("Decrypted message:", decrypted)
+
 
 
 
@@ -41,7 +48,7 @@ def vigenere_cipher(text, key, decrypt=False):
     return result
 
 
-text = input("Enter your message: ")
+text = input("Enter your message for Vigenere Cipher: ")
 key = input("Enter key: ")
 
 encrypted = vigenere_cipher(text, key)
