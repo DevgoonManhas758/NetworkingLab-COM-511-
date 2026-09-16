@@ -1,0 +1,21 @@
+import hashlib
+
+with open("sample.txt", "w") as file:
+    file.write("hello networking lab")
+
+with open("sample.txt", "rb") as file:
+    data = file.read()
+
+hash1 = hashlib.sha256(data).hexdigest()
+print("Original SHA-256:", hash1)
+
+with open("sample.txt", "w") as file:
+    file.write("hello networking lab modified")
+
+with open("sample.txt", "rb") as file:
+    data = file.read()
+
+hash2 = hashlib.sha256(data).hexdigest()
+print("Modified SHA-256:", hash2)
+
+print("Hashes are different:", hash1 != hash2)
