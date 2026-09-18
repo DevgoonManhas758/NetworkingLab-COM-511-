@@ -6,7 +6,7 @@ secret = "password123"
 
 
 
-print("=== Challenge-Response Authentication ===")
+print("Challenge-Response Authentication ")
 
 
 challenge = str(random.randint(1000, 9999))
